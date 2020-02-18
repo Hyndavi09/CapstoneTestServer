@@ -18,6 +18,6 @@ node
   	input "Start provisioning the production server?"
   }
   stage('Downstream Build -- Terraform'){
-	 build 'Infrastructure'
+	 build 'Capstone_Infrastructure'
 	}
   }
