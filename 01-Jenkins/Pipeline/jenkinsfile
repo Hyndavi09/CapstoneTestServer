@@ -13,6 +13,10 @@ node
     stage('Docker-Stage-Deployment') {
    sh label: 'DOCKER DEPLOYMENT', script: 'docker-compose up -d --build'
   }
+  stage('Pushing DockerImage to DockerHub') {
+	  docker.withRegistry('', 'docker-hyndu' ) {
+		    sh label: '', script: 'docker push hyndavi123/petclinic:$BUILD_NUMBER'
+		  }
   }
   stage('Production - Provisioning Approval') {
   	input "Start provisioning the production server?"
