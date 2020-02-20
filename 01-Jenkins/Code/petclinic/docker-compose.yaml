@@ -4,5 +4,6 @@ version: '2'
 services:
   petclinic:
     build: . 
+    image: hyndavi123/petclinic:$BUILD_NUMBER
     ports:
       - '30080:8080'
